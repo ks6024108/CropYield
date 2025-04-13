@@ -1,0 +1,35 @@
+<!-- {% if prediction %}
+<h1 class="text-center">Predicted Yield: <br />{{prediction}}</h1>
+
+{% endif %}
+<h3>Temperature vs Predicted Yield</h3>
+<img src="data:image/png;base64,{{ plot_url }}" />
+<a href="/">Go Back</a> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yield Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      {% if prediction %}
+      <h1 class="title">Predicted Yield</h1>
+      <p class="result">{{ prediction }}</p>
+      {% endif %}
+
+      <h3 class="subheading">Temperature vs Predicted Yield</h3>
+      <div class="image-container">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Yield Graph" />
+      </div>
+
+      <a href="/" class="back-btn">← Go Back</a>
+    </div>
+  </body>
+</html>
